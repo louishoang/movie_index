@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Movie Index</title>
+    <link rel="stylesheet" href="home.css" />
+  </head>
+
+  <body>
+    <a href="/movies?page=1"><h3>Home Page</h3></a>
+    <br>
+    <div id="search box" style="text-align: center">
+      <form action="/movies" method="get">
+        <label for="query"><strong>Search: </strong></label>
+        <input type="text" name="query" id="query" />
+        <input type="submit" value="Search" />
+      </form>
+    </div>
+    <br>
+    <ul>
+      <%= yield %>
+    </ul>
+  </body>
+</html>

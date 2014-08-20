@@ -1,0 +1,33 @@
+
+Your search on <%= params[:query] %> returns:
+
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>Title</th>
+    <th>Year</th>
+    <th>Synopsis</th>
+    <th>Rating</th>
+    <th>Genre</th>
+    <th>Studio</th>
+  </tr>
+
+  <% @movies.each do |movie| %>
+  <tr>
+    <td><%= movie[:id] %></td>
+    <td><a href="/movies/<%= movie[:id] %>"><%= movie[:title] %></a></td>
+    <td><%= movie[:year] %></td>
+    <td><%= movie[:synopsis] %></td>
+    <td><%= movie[:rating] %></td>
+    <td><%= movie[:genre] %></td>
+    <td><%= movie[:studio] %></td>
+  </tr>
+  <% end %>
+
+</table>
+<br>
+Current page: <%= params[:page] %>
+<br><br>
+<% for i in (1..@length) %>
+<a href="/movies?page=<%= i %>"><%= i %></a>
+<% end %>
